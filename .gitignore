@@ -1,0 +1,7 @@
+node_modules
+build
+db/*
+!db/.gitkeep
+data/*
+!data/.gitkeep
+.idea
