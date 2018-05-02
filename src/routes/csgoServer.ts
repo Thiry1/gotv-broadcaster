@@ -27,6 +27,10 @@ csgoServerRoute.post("/:token/:fragmentNumber/:frameType", async (req, res) => {
             fragmentNumber: req.params.fragmentNumber as string,
             auth: req.headers["x-origin-auth"] as string,
             type: req.params.frameType as FrameType,
+            protocol: parseInt(req.query.protocol, 10),
+            map: req.query.map,
+            tick: parseInt(req.query.tick, 10),
+            tps: parseInt(req.query.tps, 10),
         });
     } else if (req.params.frameType === FrameType.Full) {
         // frame_buffer_put(req.params.token, req.params.fragmentNumber, req.query.tick);
